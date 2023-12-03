@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Interactive Tree</title>
+</head>
+<body>
+  <div id="tree-container">
+    <svg id="tree" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" width="200" height="400">
+      <!-- Add your SVG tree elements here -->
+      <rect x="40" y="160" width="20" height="40" fill="brown" />
+      <polygon points="50,120 30,160 70,160" fill="green" />
+      <polygon points="50,80 30,120 70,120" fill="green" />
+      <!-- ... Add more SVG tree elements as needed -->
+    </svg>
+    <!-- Leaves will be dynamically added here -->
+  </div>
+  <p id="count">Leaves picked: 0</p>
+
+  <script src="index.js"></script>
+</body>
+</html>
