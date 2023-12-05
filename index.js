@@ -4,13 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let leafCount = 0;
   
     // Function to create a new leaf
-    function createLeaf() {
+    function createLeaf(row, col) {
       const leaf = document.createElement('div');
       leaf.className = 'leaf';
-      
-      // Set random position within the tree container
-      leaf.style.top = Math.random() * (treeContainer.clientHeight - 10) + 'px';
-      leaf.style.left = Math.random() * (treeContainer.clientWidth - 10) + 'px';
+  
+      // Calculate position based on row and col
+      const leafTop = row * 50; // Adjust the spacing as needed
+      const leafLeft = col * 50; // Adjust the spacing as needed
+  
+      // Set position within the tree container
+      leaf.style.top = leafTop + 'px';
+      leaf.style.left = leafLeft + 'px';
   
       // Add click event listener to the leaf
       leaf.addEventListener('click', () => {
@@ -29,10 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
       countElement.textContent = `Leaves picked: ${leafCount}`;
     }
   
-    // Create initial leaves
-    for (let i = 0; i < 10; i++) {
-      createLeaf();
+    // Create leaves in a specific pattern (e.g., 3x5 grid)
+    const rows = 3;
+    const cols = 5;
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        createLeaf(i, j);
+      }
     }
   });
-  
-  
