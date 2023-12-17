@@ -1,24 +1,56 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Set a background color for better visibility */
+}
+
+
 #tree-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  max-width: 42%;
+  height: auto;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+
+/* Add more CSS styling for your tree elements and leaves as needed */
+
+.leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  max-width: 100%;
+  overflow: hidden;
+  /* Remove or adjust the margin-top property */
+}
+
+
+.leaf:hover {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+#count {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  /* Apply margin-top on small screens */
+  body, #tree-container, #tree, .leaf {
+    margin-top: 50px; /* Adjust the margin as needed */
+    overflow: hidden;
   }
-  
-  .leaf {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: green;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: 150px;
-    align-items: center;
+  #tree-container {
+    max-width: 60%;
   }
-  
-  .leaf:hover {
-    background-color: lightgreen;
-  }
-  #count {
-    margin-top: 50px;
-  }
+}
